@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: yes
+  connection: ssh
+  tasks:
+     - name: copying var to tomcat 
+       copy: 
+        src: /home/ec2-user/workspace/pipeline-git-jen-ans-tomca/target/petclinic.war 
+        dest: /home/ec2-user/apache-tomcat-7.0.90/webapps/petclinic.war
+        mode: 0644
+
